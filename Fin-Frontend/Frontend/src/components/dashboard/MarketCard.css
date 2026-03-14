@@ -1,0 +1,106 @@
+.market-card {
+    padding: var(--space-lg);
+    cursor: pointer;
+    animation: slideUp 0.4s ease-out;
+}
+
+.mc-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 12px;
+}
+
+.mc-symbol-group {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.mc-symbol {
+    font-size: 1rem;
+    font-weight: 800;
+    color: var(--text-primary);
+    letter-spacing: -0.01em;
+}
+
+.mc-name {
+    font-size: 0.7rem;
+    color: var(--text-muted);
+}
+
+.mc-change {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 4px 10px;
+    border-radius: var(--radius-full);
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+.mc-up {
+    background: var(--color-buy-bg);
+    color: var(--color-buy);
+}
+
+.mc-down {
+    background: var(--color-sell-bg);
+    color: var(--color-sell);
+}
+
+.mc-price-row {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    margin-bottom: 10px;
+}
+
+.mc-price {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+.mc-change-value {
+    font-size: 0.825rem;
+    font-weight: 600;
+}
+
+.mc-chart {
+    margin-bottom: 10px;
+    border-radius: 8px;
+    overflow: hidden;
+    pointer-events: none;
+    position: relative;
+}
+
+.mc-chart .tradingview-mini-chart {
+    width: 100% !important;
+}
+
+.mc-footer {
+    display: flex;
+    gap: var(--space-md);
+    padding-top: 12px;
+    border-top: 1px solid var(--border-primary);
+}
+
+.mc-stat {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.mc-stat-label {
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--text-muted);
+}
+
+.mc-stat-value {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    font-weight: 500;
+}

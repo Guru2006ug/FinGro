@@ -1,0 +1,40 @@
+/* ================================
+   FinGrow App Shell Layout
+   ================================ */
+
+.app-layout {
+  display: flex;
+  min-height: 100vh;
+  position: relative;
+}
+
+.app-main {
+  flex: 1;
+  margin-left: var(--sidebar-width);
+  width: calc(100vw - var(--sidebar-width));
+  max-width: calc(100vw - var(--sidebar-width));
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  transition: all var(--transition-base);
+  overflow-x: hidden;
+}
+
+.app-main.sidebar-collapsed {
+  margin-left: var(--sidebar-collapsed);
+  width: calc(100vw - var(--sidebar-collapsed));
+  max-width: calc(100vw - var(--sidebar-collapsed));
+}
+
+.app-content {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .app-main {
+    margin-left: 0;
+  }
+}

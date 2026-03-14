@@ -1,0 +1,47 @@
+.trade-history {
+    display: flex;
+    flex-direction: column;
+    font-size: 0.8rem;
+}
+
+.trade-history-header {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    padding: 8px 12px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--text-muted);
+    border-bottom: 1px solid var(--border-primary);
+}
+
+.trade-history-body {
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.trade-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    padding: 5px 12px;
+    align-items: center;
+    transition: background var(--transition-fast);
+    animation: fadeIn 0.3s ease;
+}
+
+.trade-row:hover {
+    background: var(--bg-elevated);
+}
+
+.trade-qty {
+    color: var(--text-secondary);
+    text-align: right;
+}
+
+.trade-time {
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    font-family: var(--font-mono);
+    text-align: right;
+}

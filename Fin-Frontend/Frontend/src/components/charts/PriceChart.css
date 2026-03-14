@@ -1,0 +1,37 @@
+.price-chart {
+    width: 100%;
+}
+
+.chart-tooltip {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-primary);
+    border-radius: var(--radius-md);
+    padding: 10px 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    box-shadow: var(--shadow-lg);
+}
+
+.tooltip-time {
+    font-size: 0.7rem;
+    color: var(--text-muted);
+}
+
+.tooltip-price {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+.tooltip-vol {
+    font-size: 0.7rem;
+    color: var(--text-secondary);
+}
+
+.chart-skeleton {
+    background: linear-gradient(90deg, var(--bg-tertiary), var(--bg-elevated), var(--bg-tertiary));
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+    border-radius: var(--radius-md);
+}

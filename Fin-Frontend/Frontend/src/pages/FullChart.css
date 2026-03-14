@@ -1,0 +1,73 @@
+.fullchart-page {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background: var(--bg-primary);
+    overflow: hidden;
+}
+
+.fullchart-header {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 12px 20px;
+    border-bottom: 1px solid var(--border-primary);
+    background: var(--bg-card);
+    flex-shrink: 0;
+}
+
+.fullchart-back-btn {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 14px;
+    background: var(--bg-elevated);
+    border: 1px solid var(--border-primary);
+    border-radius: var(--radius-md);
+    color: var(--text-primary);
+    font-size: 0.85rem;
+    font-weight: 600;
+    font-family: var(--font-sans);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.fullchart-back-btn:hover {
+    background: var(--bg-card-hover);
+    border-color: var(--border-hover);
+    color: var(--accent-primary);
+}
+
+.fullchart-title-group {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex: 1;
+}
+
+.fullchart-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin: 0;
+}
+
+.fullchart-live-badge {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.75rem;
+    color: #10b981;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.fullchart-container {
+    flex: 1;
+    overflow: hidden;
+}
+
+.fullchart-container .tradingview-chart-wrapper {
+    height: 100% !important;
+    border-radius: 0;
+}

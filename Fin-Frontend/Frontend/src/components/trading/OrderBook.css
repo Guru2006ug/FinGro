@@ -1,0 +1,109 @@
+.orderbook {
+    display: flex;
+    flex-direction: column;
+    font-size: 0.8rem;
+}
+
+.orderbook-header {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    padding: 8px 12px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--text-muted);
+    border-bottom: 1px solid var(--border-primary);
+}
+
+.orderbook-asks,
+.orderbook-bids {
+    display: flex;
+    flex-direction: column;
+}
+
+.orderbook-row {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    padding: 5px 12px;
+    align-items: center;
+    transition: background var(--transition-fast);
+    cursor: pointer;
+}
+
+.orderbook-row:hover {
+    background: var(--bg-elevated);
+}
+
+.depth-bar {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    opacity: 0.12;
+    transition: width 0.4s ease;
+    pointer-events: none;
+}
+
+.ask-depth {
+    background: var(--color-sell);
+}
+
+.bid-depth {
+    background: var(--color-buy);
+}
+
+.orderbook-row .price {
+    font-weight: 600;
+    z-index: 1;
+}
+
+.orderbook-row .qty,
+.orderbook-row .total {
+    color: var(--text-secondary);
+    text-align: right;
+    z-index: 1;
+}
+
+/* Spread */
+.orderbook-spread {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 8px;
+    background: var(--bg-tertiary);
+    border-top: 1px solid var(--border-primary);
+    border-bottom: 1px solid var(--border-primary);
+    color: var(--text-primary);
+    font-weight: 600;
+}
+
+.spread-label {
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    font-weight: 400;
+}
+
+/* Compact mode */
+.orderbook-compact .orderbook-row {
+    padding: 4px 10px;
+    font-size: 0.75rem;
+}
+
+/* Skeleton */
+.orderbook-skeleton {
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.skeleton-line {
+    height: 20px;
+    background: linear-gradient(90deg, var(--bg-tertiary), var(--bg-elevated), var(--bg-tertiary));
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+    border-radius: var(--radius-sm);
+}

@@ -1,0 +1,38 @@
+.order-symbol {
+    font-weight: 700;
+    font-size: 0.825rem;
+    color: var(--text-primary);
+}
+
+.order-time {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--text-muted);
+}
+
+.cancel-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    border: 1px solid rgba(239, 68, 68, 0.3);
+    border-radius: var(--radius-sm);
+    background: rgba(239, 68, 68, 0.08);
+    color: var(--color-sell);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.cancel-btn:hover {
+    background: rgba(239, 68, 68, 0.2);
+    border-color: var(--color-sell);
+    box-shadow: 0 0 12px rgba(239, 68, 68, 0.2);
+}
+
+.empty-table {
+    padding: 32px;
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 0.875rem;
+}

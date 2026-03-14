@@ -1,0 +1,72 @@
+.stat-card {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    padding: var(--space-lg);
+    animation: slideUp 0.4s ease-out;
+}
+
+.stat-icon-wrap {
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--radius-md);
+    background: var(--accent-glow);
+    color: var(--accent-primary);
+    flex-shrink: 0;
+}
+
+.stat-default .stat-icon-wrap {
+    background: var(--accent-glow);
+    color: var(--accent-primary);
+}
+
+.stat-green .stat-icon-wrap {
+    background: var(--color-buy-bg);
+    color: var(--color-buy);
+}
+
+.stat-red .stat-icon-wrap {
+    background: var(--color-sell-bg);
+    color: var(--color-sell);
+}
+
+.stat-yellow .stat-icon-wrap {
+    background: var(--color-warning-bg);
+    color: var(--color-warning);
+}
+
+.stat-content {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.stat-label {
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--text-muted);
+}
+
+.stat-value {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+.stat-trend {
+    font-size: 0.7rem;
+    font-weight: 600;
+}
+
+.trend-up {
+    color: var(--color-buy);
+}
+
+.trend-down {
+    color: var(--color-sell);
+}

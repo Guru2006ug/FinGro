@@ -1,0 +1,549 @@
+/* ==========================================
+   FinGrow Design System — Dark Trading Theme
+   ========================================== */
+
+/* --- CSS Custom Properties --- */
+:root {
+  /* Background layers */
+  --bg-primary: #0a0e17;
+  --bg-secondary: #111827;
+  --bg-tertiary: #1a2235;
+  --bg-card: rgba(17, 24, 39, 0.7);
+  --bg-card-hover: rgba(26, 34, 53, 0.85);
+  --bg-elevated: rgba(30, 41, 59, 0.5);
+
+  /* Text */
+  --text-primary: #f1f5f9;
+  --text-secondary: #94a3b8;
+  --text-muted: #64748b;
+  --text-inverse: #0a0e17;
+
+  /* Brand / Accent */
+  --accent-primary: #387ED1;
+  --accent-primary-hover: #5BA0E8;
+  --accent-glow: rgba(56, 126, 209, 0.3);
+
+  /* Semantic — Trading */
+  --color-buy: #10b981;
+  --color-buy-bg: rgba(16, 185, 129, 0.1);
+  --color-buy-hover: #34d399;
+  --color-sell: #ef4444;
+  --color-sell-bg: rgba(239, 68, 68, 0.1);
+  --color-sell-hover: #f87171;
+  --color-warning: #f59e0b;
+  --color-warning-bg: rgba(245, 158, 11, 0.1);
+
+  /* Status */
+  --status-open: #387ED1;
+  --status-open-bg: rgba(56, 126, 209, 0.15);
+  --status-partial: #f59e0b;
+  --status-partial-bg: rgba(245, 158, 11, 0.15);
+  --status-filled: #10b981;
+  --status-filled-bg: rgba(16, 185, 129, 0.15);
+  --status-cancelled: #64748b;
+  --status-cancelled-bg: rgba(100, 116, 139, 0.15);
+
+  /* Borders */
+  --border-primary: rgba(148, 163, 184, 0.1);
+  --border-hover: rgba(148, 163, 184, 0.2);
+  --border-focus: rgba(56, 126, 209, 0.5);
+
+  /* Shadows */
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.5);
+  --shadow-glow: 0 0 20px rgba(56, 126, 209, 0.15);
+
+  /* Spacing */
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 32px;
+  --space-2xl: 48px;
+
+  /* Border Radius */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-full: 9999px;
+
+  /* Typography */
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+
+  /* Transitions */
+  --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-base: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 400ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* Sidebar */
+  --sidebar-width: 260px;
+  --sidebar-collapsed: 72px;
+  --topbar-height: 64px;
+}
+
+/* ─── Light Theme Overrides ─── */
+[data-theme="light"] {
+  /* Background layers */
+  --bg-primary: #f5f7fa;
+  --bg-secondary: #ffffff;
+  --bg-tertiary: #e8ecf1;
+  --bg-card: rgba(255, 255, 255, 0.85);
+  --bg-card-hover: rgba(245, 247, 250, 0.95);
+  --bg-elevated: rgba(0, 0, 0, 0.04);
+
+  /* Text */
+  --text-primary: #1a202c;
+  --text-secondary: #4a5568;
+  --text-muted: #a0aec0;
+  --text-inverse: #f5f7fa;
+
+  /* Brand / Accent */
+  --accent-primary: #387ED1;
+  --accent-primary-hover: #2d6ab8;
+  --accent-glow: rgba(56, 126, 209, 0.2);
+
+  /* Semantic — Trading */
+  --color-buy: #059669;
+  --color-buy-bg: rgba(5, 150, 105, 0.1);
+  --color-buy-hover: #10b981;
+  --color-sell: #dc2626;
+  --color-sell-bg: rgba(220, 38, 38, 0.08);
+  --color-sell-hover: #ef4444;
+  --color-warning: #d97706;
+  --color-warning-bg: rgba(217, 119, 6, 0.1);
+
+  /* Status */
+  --status-open: #387ED1;
+  --status-open-bg: rgba(56, 126, 209, 0.1);
+  --status-partial: #d97706;
+  --status-partial-bg: rgba(217, 119, 6, 0.1);
+  --status-filled: #059669;
+  --status-filled-bg: rgba(5, 150, 105, 0.1);
+  --status-cancelled: #94a3b8;
+  --status-cancelled-bg: rgba(148, 163, 184, 0.1);
+
+  /* Borders */
+  --border-primary: rgba(0, 0, 0, 0.1);
+  --border-hover: rgba(0, 0, 0, 0.18);
+  --border-focus: rgba(56, 126, 209, 0.5);
+
+  /* Shadows */
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.12);
+  --shadow-glow: 0 0 20px rgba(56, 126, 209, 0.12);
+
+  /* Sidebar & TopBar light backgrounds */
+  --sidebar-bg: rgba(255, 255, 255, 0.92);
+  --topbar-bg: rgba(255, 255, 255, 0.85);
+}
+
+/* --- Reset & Base --- */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 14px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-sans);
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.6;
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+/* Background gradient overlay */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 20% 0%, rgba(56, 126, 209, 0.06) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 100%, rgba(16, 185, 129, 0.04) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+[data-theme="light"] body::before {
+  background:
+    radial-gradient(ellipse at 20% 0%, rgba(90, 95, 242, 0.04) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 100%, rgba(5, 150, 105, 0.03) 0%, transparent 50%);
+}
+
+#root {
+  position: relative;
+  z-index: 1;
+  min-height: 100vh;
+}
+
+a {
+  color: var(--accent-primary);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+a:hover {
+  color: var(--accent-primary-hover);
+}
+
+/* --- Scrollbar --- */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(148, 163, 184, 0.2);
+  border-radius: var(--radius-full);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(148, 163, 184, 0.35);
+}
+
+/* --- Keyframe Animations --- */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideInLeft {
+  from { opacity: 0; transform: translateX(-16px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes tickerScroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+@keyframes priceFlashGreen {
+  0% { background: var(--color-buy-bg); }
+  100% { background: transparent; }
+}
+
+@keyframes priceFlashRed {
+  0% { background: var(--color-sell-bg); }
+  100% { background: transparent; }
+}
+
+@keyframes livePulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.4); }
+  50% { box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+}
+
+/* --- Utility Classes --- */
+.animate-fade-in {
+  animation: fadeIn var(--transition-base) ease-out;
+}
+
+.animate-slide-up {
+  animation: slideUp var(--transition-slow) ease-out;
+}
+
+.animate-slide-down {
+  animation: slideDown var(--transition-base) ease-out;
+}
+
+/* --- Glass Card --- */
+.glass-card {
+  background: var(--bg-card);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--border-primary);
+  border-radius: var(--radius-lg);
+  transition: all var(--transition-base);
+}
+
+.glass-card:hover {
+  background: var(--bg-card-hover);
+  border-color: var(--border-hover);
+  box-shadow: var(--shadow-md);
+}
+
+/* --- Buttons --- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-sm);
+  padding: 10px 20px;
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  font-weight: 600;
+  border: none;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  outline: none;
+  white-space: nowrap;
+}
+
+.btn:active {
+  transform: scale(0.97);
+}
+
+.btn-primary {
+  background: var(--accent-primary);
+  color: white;
+}
+
+.btn-primary:hover {
+  background: var(--accent-primary-hover);
+  box-shadow: var(--shadow-glow);
+}
+
+.btn-buy {
+  background: var(--color-buy);
+  color: white;
+}
+
+.btn-buy:hover {
+  background: var(--color-buy-hover);
+  box-shadow: 0 0 20px rgba(16, 185, 129, 0.3);
+}
+
+.btn-sell {
+  background: var(--color-sell);
+  color: white;
+}
+
+.btn-sell:hover {
+  background: var(--color-sell-hover);
+  box-shadow: 0 0 20px rgba(239, 68, 68, 0.3);
+}
+
+.btn-ghost {
+  background: transparent;
+  color: var(--text-secondary);
+  border: 1px solid var(--border-primary);
+}
+
+.btn-ghost:hover {
+  background: var(--bg-elevated);
+  color: var(--text-primary);
+  border-color: var(--border-hover);
+}
+
+.btn-sm {
+  padding: 6px 12px;
+  font-size: 0.75rem;
+}
+
+.btn-lg {
+  padding: 14px 28px;
+  font-size: 1rem;
+}
+
+/* --- Status Badges --- */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 10px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-radius: var(--radius-full);
+}
+
+.badge-open {
+  background: var(--status-open-bg);
+  color: var(--status-open);
+}
+
+.badge-partial {
+  background: var(--status-partial-bg);
+  color: var(--status-partial);
+}
+
+.badge-filled {
+  background: var(--status-filled-bg);
+  color: var(--status-filled);
+}
+
+.badge-cancelled {
+  background: var(--status-cancelled-bg);
+  color: var(--status-cancelled);
+}
+
+.badge-buy {
+  background: var(--color-buy-bg);
+  color: var(--color-buy);
+}
+
+.badge-sell {
+  background: var(--color-sell-bg);
+  color: var(--color-sell);
+}
+
+/* --- Form Inputs --- */
+.input {
+  width: 100%;
+  padding: 10px 14px;
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  color: var(--text-primary);
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border-primary);
+  border-radius: var(--radius-md);
+  outline: none;
+  transition: all var(--transition-fast);
+}
+
+.input:focus {
+  border-color: var(--border-focus);
+  box-shadow: 0 0 0 3px var(--accent-glow);
+}
+
+.input::placeholder {
+  color: var(--text-muted);
+}
+
+.input-mono {
+  font-family: var(--font-mono);
+}
+
+/* --- Tables --- */
+.table-container {
+  overflow-x: auto;
+  border-radius: var(--radius-lg);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+thead th {
+  padding: 12px 16px;
+  text-align: left;
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+  background: var(--bg-tertiary);
+  border-bottom: 1px solid var(--border-primary);
+  white-space: nowrap;
+}
+
+tbody td {
+  padding: 12px 16px;
+  font-size: 0.825rem;
+  border-bottom: 1px solid var(--border-primary);
+  vertical-align: middle;
+}
+
+tbody tr {
+  transition: background var(--transition-fast);
+}
+
+tbody tr:hover {
+  background: var(--bg-elevated);
+}
+
+tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* --- Section Headers --- */
+.section-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: var(--space-md);
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.section-title .icon {
+  color: var(--accent-primary);
+}
+
+/* --- Mono Numbers --- */
+.mono {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+}
+
+.price-up {
+  color: var(--color-buy);
+}
+
+.price-down {
+  color: var(--color-sell);
+}
+
+/* --- Responsive --- */
+@media (max-width: 1024px) {
+  :root {
+    --sidebar-width: 72px;
+  }
+}
+
+@media (max-width: 768px) {
+  :root {
+    --sidebar-width: 0px;
+  }
+  html {
+    font-size: 13px;
+  }
+}
+
+/* --- Light Theme Scrollbar --- */
+[data-theme="light"] ::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.15);
+}
+
+[data-theme="light"] ::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.28);
+}
+
+/* --- Light Theme Glass Card Shadow --- */
+[data-theme="light"] .glass-card {
+  box-shadow: var(--shadow-sm);
+}
+
+[data-theme="light"] .glass-card:hover {
+  box-shadow: var(--shadow-md);
+}

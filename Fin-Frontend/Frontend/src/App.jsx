@@ -55,13 +55,19 @@ function AppShell() {
 
 function App() {
   return (
-    <ThemeProvider>
-      <AuthProvider>
-        <Router>
+    <Router basename="/FinGro">
+      <ThemeProvider>
+        <AuthProvider>
           <Routes>
-            {/* Public routes */}
-            <Route path="/" element={<GuestRoute><LandingPage /></GuestRoute>} />
-            <Route path="/login" element={<GuestRoute><Login /></GuestRoute>} />
+            <Route path="/" element={<LandingPage />} />
+            <Route
+              path="/login"
+              element={
+                <GuestRoute>
+                  <Login />
+                </GuestRoute>
+              }
+            />
             <Route path="/register" element={<GuestRoute><Register /></GuestRoute>} />
 
             {/* Protected app routes */}
@@ -70,15 +76,18 @@ function App() {
                 <FullChart />
               </ProtectedRoute>
             } />
-            <Route path="/*" element={
-              <ProtectedRoute>
-                <AppShell />
-              </ProtectedRoute>
-            } />
+            <Route
+              path="/*"
+              element={
+                <ProtectedRoute>
+                  <AppShell />
+                </ProtectedRoute>
+              }
+            />
           </Routes>
-        </Router>
-      </AuthProvider>
-    </ThemeProvider>
+        </AuthProvider>
+      </ThemeProvider>
+    </Router>
   );
 }
 

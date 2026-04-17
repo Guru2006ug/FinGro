@@ -21,9 +21,12 @@ jobs:
 
       - name: npm ci
         run: npm ci
+        working-directory: ./Fin-Frontend/Frontend
 
       - name: Run tests
         run: npm test --if-present
+        working-directory: ./Fin-Frontend/Frontend
 
       - name: Build project
         run: npm run build --if-present
+        working-directory: ./Fin-Frontend/Frontend
